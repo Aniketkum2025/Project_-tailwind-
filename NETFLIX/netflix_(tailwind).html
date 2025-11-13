@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+
+    <link rel="icon" type="image/x-icon" href="./photo/fav-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 14px !important;
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .accordion-content.active {
+        max-height: 500px;
+    }
+
+    .accordion-icon {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .accordion-icon.active {
+        transform: rotate(45deg);
+    }
+</style>
+
+
+<body class="bg-black text-white">
+
+    <!-- Section 1: Hero -->
+    <section id="section1"
+        class="relative min-h-[99vh] bg-[linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('././photo/background.jpg')] bg-cover bg-center flex items-center text-white"
+        role="banner" aria-label="Netflix hero section">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 md:py-16 lg:py-20 relative">
+            <!-- Header -->
+            <header
+                class="flex flex-col sm:flex-row justify-between items-center relative bottom-10 sm:bottom-16 mb-32 gap-4 sm:gap-6">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" aria-label="Netflix Home">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                            alt="Netflix Logo" class="h-8 sm:h-9 md:h-10 lg:h-12" width="120" height="48" />
+                    </a>
+                </div>
+
+                <!-- Right Controls (Lang + Sign In) -->
+                <div class="flex items-center gap-3 sm:gap-5">
+                    <!-- Language Dropdown -->
+                    <div class="relative w-[110px]">
+                        <select id="langSelect"
+                            class="w-full bg-black border border-gray-600 text-white px-4 py-1.5 rounded cursor-pointer text-sm font-medium appearance-none focus:outline-none pr-8 focus:border-[#ffffff] focus:ring-[#ffffff] "
+                            aria-required="true">
+                            <option value="en" selected>English</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                            <svg class="w-4 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Sign In Button -->
+                    <a href="/login"
+                        class="inline-block bg-[#E50914] hover:bg-[#d40610] text-white text-sm px-5 py-1.5 rounded font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-red-600  focus:border-gray-400"
+                        role="button" aria-label="Sign In to Netflix">
+                        Sign In
+
+                    </a>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main id="main" class="flex flex-col items-center text-center px-2 relative bottom-12">
+                <div class="heading mb-8 sm:mb-5 md:mb-5">
+                    <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold mb-4 leading-tight">
+                        Unlimited movies, TV <br class="hidden sm:block" /> shows and more
+                    </h1>
+                    <h6 class="text-base sm:text-sm md:text-xl lg:text-xl mb-4 text-white font-semibold">
+                        Starts at ₹149. Cancel at any time.
+                    </h6>
+                    <p class="text-sm sm:text-base md:text-sm text-white">
+                        Ready to watch? Enter your email to create or restart your membership.
+                    </p>
+                </div>
+
+                <!-- Input and Button -->
+                <form id="email-form" class="flex flex-col sm:flex-row items-center gap-3 w-full max-w-[600px] mx-auto"
+                    novalidate aria-label="Email signup form">
+                    <label for="email-input" class="sr-only">Email address</label>
+                    <input id="email-input" type="email" placeholder="Email address" required
+                        class="flex-1 w-full px-4 py-3 bg-black bg-opacity-70 border border-gray-600 rounded text-white placeholder-gray-500 focus:border-[#E50914] focus:outline-none  focus:ring-[#E50914] text-sm md:text-base"
+                        aria-describedby="email-help" />
+
+                    <button type="submit"
+                        class="flex items-center justify-center gap-2 bg-[#E50914] hover:bg-[#d40610] text-white px-6 py-3 rounded font-semibold text-sm md:text-base min-w-[140px] transition-colors focus:outline-none">
+                        Get Started
+                        <i class="fa-solid fa-greater-than !text-base"></i>
+                    </button>
+                </form>
+            </main>
+        </div>
+    </section>
+    <div
+        class="relative before:content-[''] before:block before:w-full before:h-2 before:bg-[linear-gradient(to_right,rgba(33,13,22,1)_10%,rgba(184,40,105,1),rgba(229,9,20,1),rgba(184,40,105,1),rgba(33,13,22,1)_90%)]">
+    </div>
+
+    <!-- Section 2: Trending Now -->
+    <div id="section2" class="bg-black py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-8">
+                <h2 class="text-2xl md:text-2xl font-bold">Trending Now</h2>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph1.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            1</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph2.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            2</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph3.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            3</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph4.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            4</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph5.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            5</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph6.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            6</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph7.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            7</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph8.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            8</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph9.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            9</div>
+                    </div>
+
+                    <div class="swiper-slide relative rounded overflow-hidden">
+                        <img src="./photo/ph10.webp" class="slide-image w-full h-full object-cover">
+                        <div class="slide-overlay absolute inset-0 bg-black opacity-0 hover:opacity-20 transition">
+                        </div>
+                        <div
+                            class="slide-number absolute -bottom-3 left-3 text-[4rem] font-bold text-white opacity-90 scale-100">
+                            10</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation flex justify-end items-center gap-3 relative bottom-56 md:bottom-40">
+
+
+                <button id="prev"
+                    class="swiper-button-prev text-xs text-white w-6 h-28 sm:w-6 sm:h-28 md:w-6 md:h-28 rounded-2xl bg-[#252323] hover:bg-[#3a3938] transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg">
+                </button>
+
+                <button id="next"
+                    class="swiper-button-next text-xs text-white w-6 h-28 sm:w-6 sm:h-28 md:w-6 md:h-28 rounded-2xl bg-[#252323] hover:bg-[#3a3938] transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-lg">
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- section-3 with breakpoints -->
+    <div id="section3" class="bg-black py-8 sm:py-12 md:py-16 lg:py-20">
+        <div class="max-w-6xl sm:max-w-5xl md:max-w-6xl lg:max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+            <!-- Card Header -->
+            <div class="mb-6 sm:mb-7 md:mb-8 lg:mb-10">
+                <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">More reasons to join</h2>
+            </div>
+
+            <!-- Card Box -->
+            <div id="card-box"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-5 px-0 sm:px-2 md:px-4 lg:px-0">
+
+                <!-- Card 1 -->
+                <div
+                    class="bg-gradient-to-br from-[#232d8b] via-[#0f0030] to-[#170d4e] p-3 sm:p-4 md:p-5 lg:p-6 rounded-md sm:rounded-lg md:rounded-lg lg:rounded-xl shadow-md hover:shadow-xl flex flex-col h-[180px] sm:h-[200px] md:h-[220px] lg:h-[250px] w-full transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <h1
+                                class="text-white/90 text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-start leading-tight mb-1 sm:mb-2">
+                                Enjoy on your TV
+                            </h1>
+                            <p
+                                class="text-gray-300/80 text-xs sm:text-xs md:text-sm lg:text-sm text-start leading-relaxed line-clamp-3">
+                                Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end items-end pt-2 sm:pt-3 md:pt-4 lg:pt-5">
+                        <div
+                            class="flex justify-center items-center h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-16 lg:w-16 bg-gradient-to-br from-[#012e52] via-[#c23ed3] to-[#34069e] rounded-full">
+                            <img src="./photo/monitor (1).png" alt="TV"
+                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-gradient-to-br from-[#232d8b] via-[#0f0030] to-[#170d4e] p-3 sm:p-4 md:p-5 lg:p-6 rounded-md sm:rounded-lg md:rounded-lg lg:rounded-xl shadow-md hover:shadow-xl flex flex-col h-[180px] sm:h-[200px] md:h-[220px] lg:h-[250px] w-full transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <h1
+                                class="text-white/90 text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-start leading-tight mb-1 sm:mb-2">
+                                Download to watch offline
+                            </h1>
+                            <p
+                                class="text-gray-300/80 text-xs sm:text-xs md:text-sm lg:text-sm text-start leading-relaxed line-clamp-3">
+                                Save your favourites easily and always have something to watch.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end items-end pt-2 sm:pt-3 md:pt-4 lg:pt-5">
+                        <div
+                            class="flex justify-center items-center h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-16 lg:w-16 bg-gradient-to-br from-[#012e52] via-[#c23ed3] to-[#34069e] rounded-full">
+                            <img src="./photo/download.png" alt="Download"
+                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-gradient-to-br from-[#232d8b] via-[#0f0030] to-[#170d4e] p-3 sm:p-4 md:p-5 lg:p-6 rounded-md sm:rounded-lg md:rounded-lg lg:rounded-xl shadow-md hover:shadow-xl flex flex-col h-[180px] sm:h-[200px] md:h-[220px] lg:h-[250px] w-full transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <h1
+                                class="text-white/90 text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-start leading-tight mb-1 sm:mb-2">
+                                Watch everywhere
+                            </h1>
+                            <p
+                                class="text-gray-300/80 text-xs sm:text-xs md:text-sm lg:text-sm text-start leading-relaxed line-clamp-3">
+                                Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end items-end pt-2 sm:pt-3 md:pt-4 lg:pt-5">
+                        <div
+                            class="flex justify-center items-center h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-16 lg:w-16 bg-gradient-to-br from-[#012e52] via-[#c23ed3] to-[#34069e] rounded-full">
+                            <img src="./photo/telescope (1).png" alt="Watch"
+                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 object-contain">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-gradient-to-br from-[#232d8b] via-[#0f0030] to-[#170d4e] p-3 sm:p-4 md:p-5 lg:p-6 rounded-md sm:rounded-lg md:rounded-lg lg:rounded-xl shadow-md hover:shadow-xl flex flex-col h-[180px] sm:h-[200px] md:h-[220px] lg:h-[250px] w-full transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div>
+                            <h1
+                                class="text-white/90 text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-start leading-tight mb-1 sm:mb-2">
+                                Create profiles for kids
+                            </h1>
+                            <p
+                                class="text-gray-300/80 text-xs sm:text-xs md:text-sm lg:text-sm text-start leading-relaxed line-clamp-3">
+                                Send kids on adventures with their favourite characters in a space made just for them.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end items-end pt-2 sm:pt-3 md:pt-4 lg:pt-5">
+                        <div
+                            class="flex justify-center items-center h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-16 lg:w-16 bg-gradient-to-br from-[#012e52] via-[#c23ed3] to-[#34069e] rounded-full">
+                            <img src="./photo/user (1).png" alt="Kids"
+                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 object-contain">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div id="section4" class="bg-black py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl md:text-2xl font-bold mb-8">Frequently Asked Questions</h2>
+
+            <div class="space-y-2">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item bg-[#2f2f2f] rounded overflow-hidden">
+                    <button
+                        class="accordion-button w-full flex items-center justify-between px-6 py-4 hover:bg-[#3a3a3a] transition-colors duration-200">
+                        <h3 class="text-lg md:text-xl font-semibold text-start">What is Netflix?</h3>
+                        <span class="accordion-icon text-3xl font-light">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-300">
+                            <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows,
+                                movies, anime, documentaries, and more on thousands of internet-connected devices. You
+                                can watch as much as you want, whenever you want, without a single ad – all for one low
+                                monthly price.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item bg-[#2f2f2f] rounded overflow-hidden">
+                    <button
+                        class="accordion-button w-full flex items-center justify-between px-6 py-4 hover:bg-[#3a3a3a] transition-colors duration-200">
+                        <h3 class="text-lg md:text-xl font-semibold text-start">How much does Netflix cost?</h3>
+                        <span class="accordion-icon text-3xl font-light">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-300">
+                            <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for
+                                one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no
+                                contracts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item bg-[#2f2f2f] rounded overflow-hidden">
+                    <button
+                        class="accordion-button w-full flex items-center justify-between px-6 py-4 hover:bg-[#3a3a3a] transition-colors duration-200">
+                        <h3 class="text-lg md:text-xl font-semibold text-start">Where can I watch?</h3>
+                        <span class="accordion-icon text-3xl font-light">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-300">
+                            <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web
+                                at netflix.com from your personal computer or on any internet-connected device that
+                                offers the Netflix app.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item bg-[#2f2f2f] rounded overflow-hidden">
+                    <button
+                        class="accordion-button w-full flex items-center justify-between px-6 py-4 hover:bg-[#3a3a3a] transition-colors duration-200">
+                        <h3 class="text-lg md:text-xl font-semibold text-start">How do I cancel?</h3>
+                        <span class="accordion-icon text-3xl font-light">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-300">
+                            <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily
+                                cancel your account online in two clicks. There are no cancellation fees – start or stop
+                                your account anytime.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item bg-[#2f2f2f] rounded overflow-hidden">
+                    <button
+                        class="accordion-button w-full flex items-center justify-between px-6 py-4 hover:bg-[#3a3a3a] transition-colors duration-200">
+                        <h3 class="text-lg md:text-xl font-semibold text-start">What can I watch on Netflix?</h3>
+                        <span class="accordion-icon text-3xl font-light">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-300">
+                            <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime,
+                                award-winning Netflix originals, and more. Watch as much as you want, anytime you want.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="accordion-item bg-[#2f2f2f] rounded overflow-hidden">
+                    <button
+                        class="accordion-button w-full flex items-center justify-between px-6 py-4 hover:bg-[#3a3a3a] transition-colors duration-200">
+                        <h3 class="text-lg md:text-xl font-semibold text-start">Is Netflix good for kids?</h3>
+                        <span class="accordion-icon text-3xl font-light">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 pb-6 pt-2 text-gray-300">
+                            <p>The Netflix Kids experience is included in your membership to give parents control while
+                                kids enjoy family-friendly TV shows and films. Kids profiles come with PIN-protected
+                                parental controls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5: Footer -->
+    <div id="section5" class="bg-black py-16 ">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Email Signup -->
+            <div id="sec-5-email-box" class="mb-12 flex flex-col justify-center items-center text-center px-4">
+                <h3 class="text-[13px] font-semibold mb-3">
+                    Ready to watch? Enter your email to create or restart your membership.
+                </h3>
+                <div id="sec-5-input-box"
+                    class="flex flex-col md:flex-row justify-center items-center gap-3 max-w-2xl w-full">
+                    <label for="email-input" class="sr-only">Email address</label>
+                    <input id="email-input" type="email" placeholder="Email address" required
+                        class="flex-1 w-full px-4 py-3 bg-black bg-opacity-70 border border-gray-600 rounded text-white placeholder-gray-500 focus:border-[#E50914] focus:outline-none  focus:ring-[#E50914] text-sm md:text-base"
+                        aria-describedby="email-help" />
+                    <button id="sec-5-button"
+                        class="bg-[#E50914] hover:bg-[#d40610] text-white px-8 py-3 rounded font-semibold transition flex items-center justify-center gap-2 whitespace-nowrap">
+                        Get Started <i class="fa-solid fa-greater-than !text-base"></i>
+                    </button>
+                </div>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div id="contact" class="mb-8">
+                <h6 id="contact-header" class="text-gray-400 text-[12px]">Questions? Call 000-800-919-1743</h6>
+            </div>
+
+            <!-- Links -->
+            <div id="all-link" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-8 underline ">
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">FAQ</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Account</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Investor Relations</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Ways to Watch</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Privacy</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Corporate Information</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Speed Test</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Only on Netflix</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Help Centre</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Media Centre</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Jobs</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Terms of Use</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Cookie Preferences</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Contact Us</a>
+                <a href="#" class="text-gray-400 hover:text-white text-[10px] transition">Legal Notices</a>
+            </div>
+
+            <!-- Language Dropdown -->
+            <div class="relative w-[110px] mb-5">
+                <select id="langSelect"
+                    class="w-full bg-black border border-gray-600 text-white px-4 py-1.5 rounded cursor-pointer text-sm font-medium appearance-none focus:outline-none pr-8 focus:border-[#ffffff] focus:ring-[#ffffff] "
+                    aria-required="true">
+                    <option value="en" selected>English</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <svg class="w-4 h-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Bottom Info -->
+            <div id="netflix-india" class="text-gray-400 text-sm">
+                <h5 class="font-semibold mb-2 text-[11px]">Netflix India</h5>
+                <p class="text-[10px]">This page is protected by Google reCAPTCHA to ensure you're not a bot. <a
+                        href="#" class="text-blue-600 hover:text-blue-800 underline text-[11px]">Learn more.</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 6,
+            spaceBetween: 10,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 5
+                },
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 8
+                },
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 10
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 10
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 10
+                },
+                1200: {
+                    slidesPerView: 6,
+                    spaceBetween: 10
+                }
+            }
+        });
+
+        // Email form handling
+        document.getElementById('email-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            if (email && /\S+@\S+\.\S+/.test(email)) {
+                window.location.href = '/signup?email=' + encodeURIComponent(email);
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+
+        // Language select handler
+        document.getElementById('langSelect').addEventListener('change', function () {
+            const lang = this.value;
+            document.documentElement.lang = lang;
+        });
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('.accordion-icon');
+                const isActive = content.classList.contains('active');
+
+                // Close all accordions
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                document.querySelectorAll('.accordion-icon').forEach(i => {
+                    i.classList.remove('active');
+                });
+
+                // Open only if it wasn't already open
+                if (!isActive) {
+                    content.classList.add('active');
+                    icon.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
