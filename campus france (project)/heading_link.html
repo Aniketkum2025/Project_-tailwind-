@@ -1,0 +1,1058 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="./script.js"></script> -->
+    <title>Students|Campus France</title>
+</head>
+<body class="bg-gray-300">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <!-- Navigation Container -->
+        <div class="w-full flex flex-col items-center py-1 sm:py-2 md:py-4 px-2 sm:px-4">
+            <!-- Main Title -->
+            <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-white bg-red-600 py-2 px-3 -mb-1 md:mb-0">STUDENTS
+            </h1>
+            <!-- Navigation Menu -->
+            <ul class="list-none flex flex-wrap justify-center gap-0 sm:gap-0">
+                <li><a href="#section1"
+                        class="no-underline text-xs sm:text-sm md:text-2xl font-bold text-white bg-red-600 py-1 sm:py-2 px-2 sm:px-3 hover:bg-red-700 transition">Choose
+                        France</a></li>
+                <li><a href="#section2"
+                        class="no-underline text-xs sm:text-sm md:text-2xl font-bold text-white bg-red-600 py-1 sm:py-2 px-2 sm:px-3 hover:bg-red-700 transition">Studying</a>
+                </li>
+                <li><a href="#section3"
+                        class="no-underline text-xs sm:text-sm md:text-2xl font-bold text-white bg-red-600 py-1 sm:py-2 px-2 sm:px-3 hover:bg-red-700 transition">Getting
+                        organised</a></li>
+                <li><a href="#section4"
+                        class="no-underline text-xs sm:text-sm md:text-2xl font-bold text-white bg-red-600 py-1 sm:py-2 px-2 sm:px-3 hover:bg-red-700 transition">And
+                        After?</a>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+    <!-- section-1 -->
+    <section id="section1"
+        class="mx-2 sm:mx-4 md:mx-10 mt-6 sm:mt-8 px-3 sm:px-6 md:px-12 pt-6 sm:pt-10 flex flex-col lg:flex-row justify-center items-center gap-6 md:gap-x-10 bg-white">
+
+        <!-- Left Column -->
+        <div class="left my-6 sm:my-10 w-full lg:w-auto">
+            <div class="text">
+                <div class="text-center">
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-white bg-red-600 py-2 px-3 -mb-1 md:mb-0">
+                        Choose France
+                    </h1>
+                </div>
+
+                <div class="relative w-full md:w-[600px] h-[200px] sm:h-[250px] md:h-[350px] mb-4 sm:mb-8 md:mb-[72px]">
+                    <img src="section1-1.jpg" alt="Sample" class="w-full h-full object-cover brightness-75">
+
+                    <!-- Overlay Buttons -->
+                    <div
+                        class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-3 sm:px-4 md:mx-4 gap-3">
+
+                        <!-- Button 1 -->
+                        <button onclick="showContent('content1')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                Educational excellence in France
+                            </span>
+                        </button>
+
+                        <!-- Button 2 -->
+                        <button onclick="showContent('content2')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                Study at the heart of Europe
+                            </span>
+                        </button>
+
+                        <!-- Button 3 -->
+                        <button onclick="showContent('content3')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                The art of living à la française
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column (Dynamic Content) -->
+        <div class="relative w-full md:w-[600px] h-[400px] mb-4 sm:mb-8 md:mb-[72px]">
+            <div id="content-box" class="bg-red-600 text-white p-4 rounded-lg h-full overflow-y-auto overflow-x-hidden">
+                <div id="content1">
+                    <h1 class="text-lg font-bold mb-3">Educational excellence in France</h1>
+                    <p class="text-sm leading-relaxed">
+                        L’enseignement supérieur en France est considéré comme synonyme d’éducation de qualité mondiale.
+                        Les établissements prestigieux du pays maintiennent constamment leur position dans les
+                        classements internationaux. La France occupe la troisième place mondiale selon le classement de
+                        Shanghai et la quatrième place pour les médailles Fields en mathématiques, témoignant ainsi de
+                        son leadership scientifique.
+                        Les programmes éducatifs français sont particulièrement valorisés, car ils offrent un équilibre
+                        précis entre connaissances théoriques et expérience pratique, préparant efficacement les
+                        étudiants à des carrières dynamiques.
+                        Les frais de scolarité en France restent remarquablement accessibles, grâce à un important
+                        financement public et à la multiplicité des bourses offertes aux étudiants internationaux,
+                        notamment à ceux venant de l’Inde. <br>
+                        <br>
+                        Higher education in France is considered to be synonymous with world class quality education.
+                        The prestigious institutions in France are consistent with its ranking internationally. France
+                        is globally ranked at the third position in Shanghai Rankings and at Fourth position in Field
+                        Medals in Mathematics, reflecting its scientific leadership. French educational programs are
+                        highly emphasized because it is an accurate blend of both theoretical knowledge and hands-on,
+                        professional experience that considerably equips the students in dynamic careers. The fees of
+                        the french programmes are remarkably accessible as there is availability of substantial public
+                        funding and scholarship programs abound for international students especially for students from
+                        India.
+
+                    </p>
+                </div>
+
+                <div id="content2" class="hidden">
+                    <h1 class="text-lg font-bold mb-3">Study at the heart of Europe</h1>
+                    <p class="text-sm leading-relaxed">
+                        La France se situe au cœur de l’Europe, et étudier en France place donc les étudiants au centre
+                        même du continent européen. Quoi de plus pratique que de pouvoir voyager vers les destinations
+                        les plus emblématiques d’Europe, comme l’Espagne, l’Allemagne ou le Royaume-Uni, en seulement
+                        quelques heures ?
+                        La position géographique stratégique de la France est idéale pour les étudiants qui souhaitent
+                        allier sérieux académique et passion du voyage. La France constitue une véritable porte d’entrée
+                        pour créer des liens et développer son réseau professionnel.
+                        Sa forte participation au programme Erasmus et aux partenariats européens facilite la mobilité
+                        académique et offre une ouverture unique sur de nombreuses cultures.
+                        Ainsi, la centralité de la France procure à la fois une richesse culturelle incomparable et de
+                        multiples opportunités professionnelles à travers les frontières européennes.
+                        <br>
+                        <br>
+                        La France se situe au cœur de l’Europe, et étudier en France place donc les étudiants au centre
+                        même du continent européen. Quoi de plus pratique que de pouvoir voyager vers les destinations
+                        les plus emblématiques d’Europe, comme l’Espagne, l’Allemagne ou le Royaume-Uni, en seulement
+                        quelques heures ?
+                        La position géographique stratégique de la France est idéale pour les étudiants qui souhaitent
+                        allier sérieux académique et passion du voyage. La France constitue une véritable porte d’entrée
+                        pour créer des liens et développer son réseau professionnel.
+                        Sa forte participation au programme Erasmus et aux partenariats européens facilite la mobilité
+                        académique et offre une ouverture unique sur de nombreuses cultures.
+                        Ainsi, la centralité de la France procure à la fois une richesse culturelle incomparable et de
+                        multiples opportunités professionnelles à travers les frontières européennes.
+                        <br>
+                        <br>
+                        <span class="font-bold">Industrial dynamism and French innovation</span><br>
+                        La force industrielle et l’innovation demeurent au cœur de la France, véritable pôle
+                        d’excellence pour des secteurs tels que l’automobile, l’énergie, la biotechnologie,
+                        l’aéronautique et la recherche en technologies de l’information.
+                        Le système industriel français prospère grâce à une étroite collaboration entre les universités
+                        de premier plan, les laboratoires de recherche et les entreprises technologiques de pointe.
+
+                        Industrial strength and innovation remains at the roots of France, the hub for sectors such as
+                        automotive, energy, biotechnology, aerospace, and IT Research. The French industrial system
+                        thrives on collaboration between leading universities, research labs, and high resolution
+                        technological companies.
+                    </p>
+                </div>
+
+                <div id="content3" class="hidden">
+                    <h1 class="text-lg font-bold mb-3">The art of living à la française</h1>
+                    <p class="text-sm leading-relaxed">
+                        France is not a hub of education recognized internationally, it is also shaped by unparalleled
+                        cultural heritage and creativity. The French “art de vivre” embraces fine dining, sophisticated
+                        design, fashion, and deep appreciation for art, be it historic cafes or aesthetic museums,
+                        bustling food markets to elegant chateaux, students enjoy a lifestyle that is a blend of
+                        tradition and modernity. The French social values, vibrant festivals, and spirit of openness
+                        offer a daily mantra for a peaceful, elegant and happening life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section-2 -->
+    <section id="section2"
+        class="mx-2 sm:mx-4 md:mx-10 mt-6 sm:mt-8 px-3 sm:px-6 md:px-12 pt-6 sm:pt-10 flex flex-col lg:flex-row justify-center items-center gap-6 md:gap-x-10 bg-white">
+
+        <!-- Left Column -->
+        <div class="left my-6 sm:my-10 w-full lg:w-auto">
+            <div class="text">
+                <div class="text-center">
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-white bg-red-600 py-2 px-3 -mb-1 md:mb-0">
+                        Studying in France
+                    </h1>
+                </div>
+
+                <div class="relative w-full md:w-[600px] h-[200px] sm:h-[250px] md:h-[350px] mb-4 sm:mb-8 md:mb-[72px]">
+                    <img src="section2-1.jpg" alt="Sample" class="w-full h-full object-cover brightness-75">
+
+                    <!-- Overlay Buttons -->
+                    <div
+                        class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-3 sm:px-4 md:mx-4 gap-3">
+
+                        <!-- Button 1 -->
+                        <button onclick="showContent('2content1')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center ">
+                                French system
+                            </span>
+                        </button>
+
+                        <!-- Button 2 -->
+                        <button onclick="showContent('2content2')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center ">
+                                Online or distance programme
+                            </span>
+                        </button>
+
+                        <!-- Button 3 -->
+                        <button onclick="showContent('2content3')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center ">
+                                Scholarships programmes
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column (Dynamic Content) -->
+        <div class="relative w-full md:w-[600px] h-[400px] mb-4 sm:mb-8 md:mb-[72px]">
+            <div id="content-box" class="bg-red-600 text-white p-4 rounded-lg h-full overflow-y-auto overflow-x-hidden">
+                <div id="2content1">
+                    <h1 class="text-lg font-bold mb-3">French system</h1>
+                    <p class="text-sm leading-relaxed">
+                        La France n’est pas seulement un centre d’éducation reconnu internationalement, elle se
+                        distingue également par un patrimoine culturel et une créativité incomparables.
+                        L’art de vivre à la française célèbre la haute gastronomie, le design raffiné, la mode élégante
+                        et une profonde appréciation de l’art — qu’il s’agisse des cafés historiques, des musées
+                        esthétiques, des marchés animés ou des châteaux majestueux. Les étudiants y découvrent un mode
+                        de vie harmonieux mêlant tradition et modernité.
+                        Les valeurs sociales françaises, ses festivals vibrants et son esprit d’ouverture offrent chaque
+                        jour une philosophie de vie paisible, élégante et dynamique.
+                        <br>
+                        <br>
+                        The French education system is known for its structured and centralised approach, that is
+                        adopted worldwide. Schooling is compulsory from age 6 in France. The education system is divided
+                        into three stages: Primary, Secondary and Higher Education. The primary schooling begins at the
+                        age of 3 with kindergarten (marternelle), the secondary education includes middle school
+                        (collège) and high school (lycée) culminating in the baccalauréat qualification. French
+                        universities and institutions provide courses spanning in language, arts, sciences, business and
+                        engineering.
+
+                    </p>
+                </div>
+
+                <div id="2content2" class="hidden">
+                    <h1 class="text-lg font-bold mb-3">Online or distance programme
+                    </h1>
+                    <p class="text-sm leading-relaxed">
+                        La France adopte une approche d’apprentissage flexible, incluant une vaste gamme de programmes
+                        en ligne et à distance.
+                        Cette formation à distance rend l’éducation plus accessible et permet aux étudiants de
+                        poursuivre leurs études tout en travaillant.
+                        Des institutions françaises telles qu’École French et plusieurs écoles de commerce réputées
+                        proposent des cours entièrement en ligne, adaptés aux professionnels en activité et aux
+                        étudiants internationaux recherchant plus de souplesse.
+                        Ces programmes en ligne intègrent des ressources numériques mondiales, offrant une expérience
+                        d’apprentissage moderne, interactive et connectée à l’échelle internationale.
+                        <br>
+                        <br>
+
+                        France embraces a flexible learning approach, which includes a variety of online and distance
+                        programs. This distance learning makes education accessible and helps to carry out their work.
+                        French institutions like Ecole French and several business schools offer fully online courses
+                        catering to working professionals and international students seeking convenience. These oline
+                        programs combine digital resources worldwide.
+
+                    </p>
+                </div>
+
+                <div id="2content3" class="hidden">
+                    <h1 class="text-lg font-bold mb-3">Scholarships programmes</h1>
+                    <p class="text-sm leading-relaxed">
+                        La France est reconnue pour offrir de nombreuses bourses destinées à soutenir financièrement les
+                        étudiants internationaux.
+                        Le gouvernement français consacre chaque année plus de 2 millions d’euros à travers des
+                        programmes tels que la Bourse Charpak pour les niveaux Bachelor et Master, Eiffel Excellence
+                        pour les étudiants en Master et PhD, et la Fellowship Raman-Charpak pour les échanges de
+                        recherche.
+                        La France soutient également les ambassades et services de coopération culturelle, qui proposent
+                        des bourses ciblées selon la nationalité et le domaine d’études.
+                        <br>
+                        <br>
+
+                        France is known for providing numerous scholarships to support international students
+                        financially. The government in France, dedicates over 2 Million Euros annually via programs like
+                        Charpak Scholarship for Bachelor’s and Master’s levels, Eiffel Excellence for Master’s and PhD
+                        students and the Raman-Charpak Fellowship for Research exchanges. French also supports embassies
+                        and cultural cooperation services that targets scholarships based on nationality and field of
+                        study.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section-3 -->
+    <section id="section3"
+        class="mx-2 sm:mx-4 md:mx-10 mt-6 sm:mt-8 px-3 sm:px-6 md:px-12 pt-6 sm:pt-10 flex flex-col lg:flex-row justify-center items-center gap-6 md:gap-x-10 bg-white">
+
+        <!-- Left Column -->
+        <div class="left my-6 sm:my-10 w-full lg:w-auto">
+            <div class="text">
+                <div class="text-center">
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-white bg-red-600 py-2 px-3 -mb-1 md:mb-0">
+                        Getting Organised
+                    </h1>
+                </div>
+
+                <div class="relative w-full md:w-[600px] h-[200px] sm:h-[250px] md:h-[350px] mb-4 sm:mb-8 md:mb-[72px]">
+                    <img src="section3-1.jpg" alt="Sample" class="w-full h-full object-cover brightness-75">
+
+                    <!-- Overlay Buttons -->
+                    <div
+                        class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-3 sm:px-4 md:mx-4 gap-3">
+
+                        <!-- Button 1 -->
+                        <button onclick="showContent('3content1')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                Student and Campus Life Contribution (CVEC)
+                            </span>
+                        </button>
+
+                        <!-- Button 2 -->
+                        <button onclick="showContent('3content2')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                Prepare your budget/ Organising your stay as a scholarship holder
+                            </span>
+                        </button>
+
+                        <!-- Button 3 -->
+                        <button onclick="showContent('3content3')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                Working while studying in France
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column (Dynamic Content) -->
+        <div class="relative w-full md:w-[600px] h-[400px] mb-4 sm:mb-8 md:mb-[72px]">
+            <div id="content-box" class="bg-red-600 text-white p-4 rounded-lg h-full overflow-y-auto overflow-x-hidden">
+                <div id="3content1">
+                    <h1 class="text-lg font-bold mb-3">Student and Campus Life Contribution (CVEC)</h1>
+                    <p class="text-sm leading-relaxed">
+                        La Contribution Vie Étudiante et de Campus (CVEC) est une contribution annuelle instaurée par le
+                        gouvernement français visant à améliorer la qualité de vie des étudiants sur les campus. Les
+                        fonds collectés servent à renforcer la santé, le soutien social, la culture, le sport et à
+                        favoriser l’engagement étudiant dans l’enseignement supérieur.
+                        Les exemptions CVEC nécessitent certains documents et offrent des avantages pour un parcours
+                        administratif fluide lors du début des études en France.
+                    </p>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <span class="font-semibold block mb-2">
+                            Étapes pour payer la CVEC (en une phrase chacune) :
+                        </span>
+                        <li class="ml-6">Créez votre compte personnel sur messervices.etudiant.gouv.fr.</li>
+                        <li class="ml-6">Connectez-vous et remplissez les informations requises pour la vérification
+                            étudiante.</li>
+                        <li class="ml-6">Accédez au portail CVEC (cvec.etudiant.gouv.fr) et choisissez votre mode de
+                            paiement (carte
+                            en ligne, carte tierce ou espèces à La Poste).</li>
+                        <li class="ml-6">Effectuez le paiement et téléchargez immédiatement le certificat CVEC (ou le
+                            certificat
+                            d’exemption si éligible).</li>
+                        <li class="ml-6">Téléversez et soumettez votre certificat à votre université pour la
+                            finalisation de votre
+                            inscription.</li>
+                    </ul>
+                    <br>
+                    <p>
+                        The French Contribution Vie Étudiante et de Campus (CVES) is an annual contribution that is
+                        established by the French government to enhance the quality of students' quality of life on
+                        campus. The funds collected are dedicated to improving health, social support, culture and
+                        sports along with student engagement across higher education institutions. CVEC exemptions
+                        require documents and benefits that will ensure a smooth administrative experience as you begin
+                        your studies in France.
+                    </p>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <span class="font-semibold block mb-2">Here are the steps for paying the CVEC in one-sentence
+                            stepwise format:</span>
+                        <li class="ml-6">Create your personal account at messervices.etudiant.gouv.fr﻿.​
+                        </li>
+                        <li class="ml-6">Log in and fill required details for student verification.​
+                        </li>
+                        <li class="ml-6">Go to the CVEC portal (cvec.etudiant.gouv.fr﻿) and select your payment method
+                            (online card,
+                            third-party card, or cash at a French post office)</li>
+                        <li class="ml-6">Complete your payment and immediately download the CVEC certificate (or get
+                            exemption
+                            certificate if eligible).​
+                        </li>
+                        <li class="ml-6">Upload and submit your certificate to your university for final registration.
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div id="3content2" class="hidden">
+                    <h1 class="text-lg font-bold mb-3">Prepare your budget/ Organising your stay as a scholarship holder
+                    </h1>
+                    <p class="text-sm leading-relaxed">
+                        Gérer vos finances en tant qu’étudiant souhaitant étudier, travailler ou séjourner en France
+                        nécessite quelques étapes cruciales à anticiper avant même d’envisager le départ. Pour une
+                        expérience étudiante réussie et sans stress, il est essentiel de suivre les principaux postes
+                        budgétaires soigneusement étudiés.
+                    </p>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <span class="font-semibold block mb-2">Principaux postes budgétaires :</span>
+                        <li class="ml-6"><span class="font-semibold mb-2">Logement : </span>Les résidences étudiantes
+                            (CROUS) sont
+                            abordables et prioritaires pour les boursiers (200 à 450 €/mois), tandis que les logements
+                            privés ou les familles d’accueil varient entre 400 et 1 200 €/mois selon la ville et les
+                            prestations.
+                        </li>
+                        <li> class="ml-6"<span class="font-semibold mb-2">Alimentation : </span>Options économiques :
+                            restaurants
+                            universitaires CROUS (1 à 3,30 €/repas) ou courses et cuisine à domicile (150 à 300 €/mois).
+                        </li>
+                        <li class="ml-6"><span class="font-semibold mb-2">ATransport : </span> La plupart des villes
+                            proposent des
+                            pass mensuels étudiants pour les transports publics (20 à 70 €), avec des options de vélos
+                            en libre-service et des tarifs réduits pour trains ou bus longue distance.
+                        </li>
+                        <li class="ml-6"><span class="font-semibold mb-2">Assurance santé :</span> Inscription à la
+                            Sécurité sociale
+                            française (souvent gratuite pour les étudiants), et souscription à une mutuelle étudiante
+                            (10 à 50 €/mois) pour couvrir les frais médicaux complémentaires.
+                        </li>
+                        <li class="ml-6"><span class="font-semibold mb-2">Dépenses personnelles : </span> Prévoyez 50 à
+                            150 €/mois
+                            pour loisirs, forfait mobile, matériel d’étude et autres besoins essentiels.
+                    </ul>
+                    <br>
+                    <p>Managing your finances as a student who wishes to study, work or stay in France are a few crucial
+                        steps which need to be taken before even considering the country. For a successful and
+                        stress-free student experience you should follow the carefully researched and understood key
+                        budget components.
+                    </p>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <span class="font-semibold block mb-2">Key Budget Components
+                        </span>
+                        <li class="ml-6"><span class="font-semibold mb-2">Accommodation: </span>Student residences
+                            (CROUS) are
+                            affordable and prioritized for scholarship holders (€200–€450/month), while private housing
+                            or homestays can range from €400–€1200 depending on city and amenities.
+                        </li>
+                        <li class="ml-6"><span class="font-semibold mb-2">Food: </span> Budget-friendly options include
+                            student
+                            cafeterias (CROUS) at €1–€3.30 per meal, or grocery shopping (€150–€300/month) and cooking
+                            at home.
+
+                        </li>
+                        <li class="ml-6"><span class="font-semibold mb-2">Transportation: </span>Most cities offer
+                            monthly student
+                            public transport passes (€20–€70), with bike-sharing options and discounted train or
+                            long-distance bus travel.
+
+                        </li>
+
+                        <li class="ml-6"><span class="font-semibold mb-2">Health Insurance: </span>Register for French
+                            Social
+                            Security
+                            (usually free for students), and consider a student “mutuelle” (€10–€50/month) to cover
+                            additional medical costs.
+
+                        </li>
+                        <li class="ml-6"><span class="font-semibold mb-2">Personal Expenses: </span> Allow
+                            €50–€150/month for
+                            leisure, mobile plans, study materials, and other essentials.
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <span class="font-semibold block mb-2">How To Save Money?</span>
+                        <li class="ml-6">Suivez vos dépenses à l’aide d’un outil ou d’une application de gestion de
+                            budget.</li>
+                        <li class="ml-6">Listez toutes vos sources de revenus et identifiez clairement les dépenses
+                            fixes et celles
+                            que vous pouvez maîtriser.</li>
+                        <li class="ml-6">Utilisez votre carte étudiante pour bénéficier de réductions sur les transports
+                            et les
+                            activités culturelles. Vous pouvez également profiter des événements ou musées gratuits si
+                            vous avez moins de 26 ans.</li>
+                        <li class="ml-6">Plutôt que d’acheter des livres neufs, optez pour des livres, fournitures et
+                            vêtements
+                            d’occasion dans les marchés locaux ou en ligne</li>
+                        <li class="ml-6">Maîtrisez votre budget alimentaire en préparant vos repas à domicile</li>
+                        <li class="ml-6">Keep a track of your expenses with help of a tool or budgeting app
+                        </li>
+                        <li class="ml-6">List all the sources of income and carefully state the fixed expenditure and
+                            the one that
+                            can be controlled</li>
+                        <li class="ml-6">Use student ID for transport and cultural discounts. You can also seek out free
+                            events or
+                            museums if you have your student ID and are below 26. </li>
+                        <li class="ml-6">Rather than spending a lot on new books you can buy second hand books, supplies
+                            and clothing
+                            at local market or online</li>
+                        <li class="ml-6">The food budget can be controlled if the food is prepared at home.</li>
+                    </ul>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <span class="font-semibold block mb-2">Organizing Your Stay</span>
+                        <li class="ml-6">Réservez votre logement tôt, surtout dans les grandes villes ou si vous
+                            souhaitez une
+                            résidence CROUS.</li>
+                        <li class="ml-6">Ouvrez un compte bancaire en France pour faciliter le versement des bourses et
+                            les
+                            transactions locales.</li>
+                        <li class="ml-6">Effectuez rapidement toutes les démarches administratives, y compris
+                            l’inscription à
+                            l’assurance santé et l’obtention de votre certificat CVEC.</li>
+                        <li class="ml-6">Participez aux programmes d’orientation étudiante et rencontrez d’autres
+                            étudiants
+                            internationaux et boursiers pour partager expériences et conseils</li>
+                        <li class="ml-6">Secure accommodation early, especially in large cities or if you want a CROUS
+                            residence</li>
+                        <li class="ml-6">Open a French bank account to facilitate scholarship payments and local
+                            transactions</li>
+                        <li class="ml-6">Complete all administrative formalities promptly, including health insurance
+                            registration
+                            and obtaining your CVEC certificate</li>
+                        <li class="ml-6">Participate in student orientation programmes and connect with other
+                            international and
+                            scholarship students to share experiences and advice</li>
+                        <span class=" text-2xl font-semibold block mb-2">Vous allez adorer la vie en France!</span>
+                    </ul>
+                </div>
+
+                <div id="3content3" class="hidd<li class=" ml-6">
+                    <h1 class="text-lg font-bold mb-3">Working while studying in France</h1>
+                    <p class="text-sm leading-relaxed">
+                        <span class="mb-4 text-1xl">Points à considérer lorsque vous travaillez pendant vos études en
+                            France</span>
+                        Les étudiants internationaux se demandent souvent s’ils peuvent travailler tout en étudiant en
+                        France. Heureusement, il est possible d’occuper un emploi à temps partiel, ce qui permet de
+                        financer ses études et d’acquérir une expérience professionnelle.
+                        <br>
+                        <br>
+                        <span class="mb-4 font-bold">
+                            Type de travail et horaires
+                        </span>
+                        <br>
+                        Les étudiants hors EEE sont limités à 964 heures de travail par an, soit environ 20 heures par
+                        semaine pendant l’année universitaire, avec possibilité de temps plein pendant les vacances.
+                        <br>
+                        <br>
+                        Les emplois peuvent inclure hôtellerie, commerce de détail, tutorat ou assistanats sur le
+                        campus. Certaines universités offrent des postes flexibles à temps partiel sur le campus.
+                    </p>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <span class="font-semibold block mb-2">Avantages :</span>
+                        <li class="ml-6">Compléter le budget pour les dépenses quotidiennes.</li>
+                        <li class="ml-6">Acquérir une expérience professionnelle diversifiée.</li>
+                        <li class="ml-6">Approfondir la connaissance de la culture française et améliorer la maîtrise de
+                            la langue.
+                        </li>
+                        <li class="ml-6">Développer son réseau professionnel dans son domaine d’intérêt</li>
+                    </ul>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <span class="font-semibold block mb-2">Conseils importants :</span>
+                        Vérifiez toujours les conditions de votre visa concernant le travail.</li>
+                        Gérez votre temps pour éviter le surmenage et l’épuisement.
+                        </li>
+                        Consultez les offres d’emploi sur le centre de carrière de votre campus et sur les annonces
+                        de Campus France.
+
+                        </li>
+                        Informez-vous sur les droits du travail pour les étudiants salariés, afin de connaître vos
+                        droits et obligations.</li>
+                    </ul>
+                    <br>
+
+                    <h1 class="text-lg font-bold mb-3">Things to Consider When Working While You are Studying in France
+                    </h1>
+                    <p class="text-sm leading-relaxed">
+                        International students commonly wonder if they can work while studying in France, and happily
+                        for students, acceptable part-time employment exists in France to help finance your studies and
+                        gain work experience.
+                        <br>
+                    </p>
+                    <br>
+                    <h1 class="text-lg font-bold mb-3">The Type of Work and Working Hours
+                    </h1>
+                    <p class="text-sm leading-relaxed">
+                        Students from non-EEA countries are limited to 964 hours of work in a year. This equates to
+                        about 20 hours weekly during the academic year, and can be full time during university vacation
+                        times. This is a healthy balance of working part-time while still being able to study and take
+                        classes.
+                        <br>
+                        Students work in a variety of jobs. Some types of jobs include: hospitality, retail, tutoring
+                        and/or on-campus assistantships. Some universities will also have jobs on-campus that allow
+                        students to work a part-time flexible schedule.
+                        <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <br>
+                        <span class="font-semibold block mb-2">Benefits:</span>
+                        <li class="ml-6">Supplement your budget for living expenses.</li>
+                        <li class="ml-6">Gain applied, diverse work experience</li>
+                        <li class="ml-6">Broaden your understanding of French culture and language fluency.</li>
+                        <li class="ml-6">Network in your area of interest for networking and career contacts.</li>
+                    </ul>
+                    <br>
+                    As with everything, be sure to check your visa requirements in regard to permission for the work.
+                    Additionally, manage your time to not overwork and potentially experience burnout.
+                    <br>
+                    Be sure to check for job advertisements at your campus career center and also collaborate with
+                    Campus France advertisements and opportunities. Be sure to become informed of labor laws as a
+                    student-worker, this means knowing your rights.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section-4 -->
+    <section id="section4"
+        class="mx-2 sm:mx-4 mb-10 md:mx-10 mt-6 sm:mt-8 px-3 sm:px-6 md:px-12 pt-6 sm:pt-10 flex flex-col lg:flex-row justify-center items-center gap-6 md:gap-x-10 bg-white">
+
+        <!-- Left Column -->
+        <div class="left my-6 sm:my-10 w-full lg:w-auto">
+            <div class="text">
+                <div class="text-center">
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-white bg-red-600 py-2 px-3 -mb-1 md:mb-0">
+                        And After?
+                    </h1>
+                </div>
+
+                <div class="relative w-full md:w-[600px] h-[200px] sm:h-[250px] md:h-[350px] mb-4 sm:mb-8 md:mb-[72px]">
+                    <img src="section4-1.jpg" alt="Sample" class="w-full h-full object-cover brightness-75">
+
+                    <!-- Overlay Buttons -->
+                    <div
+                        class="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-3 sm:px-4 md:mx-4 gap-3">
+
+                        <!-- Button 1 -->
+                        <button onclick="showContent('4content1')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                Join the France Alumni network
+                            </span>
+                        </button>
+
+                        <!-- Button 2 -->
+                        <button onclick="showContent('4content2')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                Finding work in France
+                            </span>
+                        </button>
+
+                        <!-- Button 3 -->
+                        <button onclick="showContent('4content3')"
+                            class="relative w-96 max-w-full text-sm sm:text-base md:text-lg text-white border-2 font-semibold border-white px-6 sm:px-12 md:px-24 py-2 overflow-hidden group transition-all duration-500 ease-out before:content-[''] before:absolute before:inset-0 before:bg-white before:scale-x-0 before:origin-left before:transition-transform before:duration-500 before:ease-out hover:before:scale-x-100 hover:text-red-700">
+                            <span class="relative z-10 text-center">
+                                How to start a company in France
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column (Dynamic Content) -->
+        <div class="relative w-full md:w-[600px] h-[400px] mb-4 sm:mb-8 md:mb-[72px]">
+            <div id="content-box" class="bg-red-600 text-white p-4 rounded-lg h-full overflow-y-auto overflow-x-hidden">
+                <div id="4content1">
+                    <h1 class="text-lg font-bold mb-3">Join the France Alumni network</h1>
+                    <p class="text-sm leading-relaxed">
+                        <span class="font-bold mb-4">Welcome to École French Alumni</span>
+                        <br>
+                        École French est fière de sa communauté dynamique d’alumni – un réseau en constante évolution
+                        d’apprenants et de professionnels enthousiastes ayant bénéficié de notre accompagnement
+                        personnalisé et de nos programmes engageants en langue française. À l’instar de France Alumni,
+                        encouragé par Campus France, la communauté Join École French Alumni se consacre à la création de
+                        relations durables, au développement professionnel et à l’engagement dans des expériences
+                        culturelles.
+                        <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed"><br>
+                        <span class="font-semibold mb-2">Les avantages de faire partie de cette famille d’alumni:</span>
+
+                        <li class="ml-6">Participer à des événements de networking uniques et à des
+                            découvertesculturelles, en présentiel ou virtuellement, connectant les alumni en Inde et à
+                            l’international.
+                        </li>
+
+                        <li class="ml-6">Accéder à un accompagnement de carrière et à du mentorat pour soutenir vos
+                            projets
+                            professionnels en lien avec votre maîtrise de la langue française.</li>
+                        <li class="ml-6">Recevoir des invitations à des ateliers, webinaires et opportunités de
+                            développement de
+                            compétences, conçus spécifiquement pour les alumni afin de poursuivre leur parcours
+                            linguistique et leur évolution professionnelle.</li>
+                        <li class="ml-6">Disposer d’un espace pour partager vos expériences et réussites, et collaborer
+                            sur des
+                            projets valorisant la langue française et la culture franco-indienne.</li>
+                        <li class="ml-6">Bénéficier d’un accès anticipé aux nouveaux cours, stages, aides à
+                            l’immigration et
+                            opportunités d’études à l’étranger.</li>
+                    </ul>
+                    <br>
+                    École French Alumni incarne l’esprit d’apprentissage tout au long de la vie et d’immersion
+                    culturelle, reflétant l’engagement de l’école à former des communicateurs français confiants et
+                    compétents, prêts à être des citoyens du monde. Faire partie de cette famille élargie permet de
+                    prolonger votre parcours avec la langue et la culture françaises au-delà de la salle de classe, et
+                    de développer des connexions, des compétences et des amitiés pour la vie entière.
+                    <br>
+                    École French is proud of its dynamic alumni community - a continually evolving network of
+                    enthusiastic learners and professionals who benefitted from our personalized guidance and engaging
+                    programs in the French language. Similar to France Alumni, encouraged by Campus France, the Join
+                    École French Alumni community is dedicated to creating lasting relationships, career development,
+                    and engagement in cultural experiences.
+
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed">
+                        <br>
+                        <span class="font-semibold mb-2">There are many benefits to being part of this alumni
+                            family: </span>
+
+                        <li class="ml-6">To join us for unique networking events and cultural looks, both virtually and
+                            in-person,
+                            which connect alumni in India and beyond.</li>
+                        <li class="ml-6">To access career support and mentorships as you embark on professional careers
+                            based on your
+                            proficiency in the langue française﻿.</li>
+                        <li class="ml-6">To receive invitations to workshops, webinars, and skill building opportunities
+                            specifically
+                            for alumni in order to furthers their language journey and professional advancement.</li>
+                        <li class="ml-6">To utilize a space to discuss experiences and to share successes, and to use
+                            each other’s
+                            strengths in projects that support the French language and Franco-Indian culture.</li>
+                        <li class="ml-6">To receive advanced access about new courses, internship opportunities,
+                            immigration help,
+                            and study abroad. </li>
+                    </ul>
+                    <br>
+
+                    École French Alumni is true to the spirit of lifelong learning and cultural immersion, and captures
+                    the essence of École French's commitment to developing confident, competent French communicators who
+                    are ready to be global citizens. Being a part of this extended family allows your journey with
+                    French language and culture to extend well beyond the classroom, and assists you in developing
+                    connections for skills that will create opportunities and friendships for a lifetime
+                    </p>
+                </div>
+
+                <div id="4content2">
+                    <h1 class="text-lg font-bold mb-3">Finding work in France</h1>
+                    <p class="text-sm leading-relaxed">
+                        <span class="font-bold mb-4">Obtenir un emploi en France : un guide pour les apprenants d’École
+                            French</span>
+                        <br>
+                        Travailler en France constitue une expérience exceptionnelle pour les étudiants d’École French,
+                        permettant de vivre une immersion internationale, de perfectionner votre maîtrise de la langue
+                        française et de subventionner votre séjour. Pour trouver un emploi, il est nécessaire de
+                        préparer votre démarche, de comprendre les exigences légales et de s’appuyer sur une communauté
+                        pour le suivi et les ressources.
+                        <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed"><br>
+                        <span class="font-semibold mb-2">Comprendre l’autorisation de travail</span>
+
+                        <li class="ml-6">En tant qu’étudiant international, vous pouvez travailler à temps partiel
+                            jusqu’à 964 heures
+                            par an (environ 20 heures par semaine) et à temps plein pendant les intersessions lorsque
+                            les cours ne sont pas programmés.</li>
+                        <li class="ml-6">Assurez-vous de respecter les conditions de votre visa ou titre de séjour
+                            permettant le
+                            travail. Les régulations gouvernementales évoluent fréquemment, il est donc essentiel de
+                            vérifier régulièrement les mises à jour.</li>
+                    </ul>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed"><br>
+                        <span class="font-semibold mb-2">Stratégies de recherche d’emploi</span>
+
+                        <li class="ml-6">Commencez vos recherches à l’avance : utilisez les sites d’emploi en ligne, les
+                            panneaux de
+                            carrière universitaires, les agences d’emploi, etc.Les secteurs populaires pour les
+                            étudiants sont : restaurants / bars, commerce de détail, tutorat, ou assistanat
+                            administratif sur le campus.</li>
+                        <li class="ml-6">Le réseautage est clé : connectez-vous avec vos camarades d’École French, les
+                            alumni et la
+                            communauté locale pour obtenir références et conseils.</li>
+                        <li class="ml-6">
+                            Préparez un CV et une lettre de motivation en français : respectez les normes structurelles
+                            et historiques, et utilisez les cours d’École French sur la communication professionnelle
+                            pour finaliser vos documents.
+                        </li>
+                    </ul>
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed"><br>
+                        <span class="font-semibold mb-2">Ressources et accompagnement</span>
+
+                        <li class="ml-6">École French offre un soutien personnalisé pour les stratégies de recherche
+                            d’emploi, la
+                            préparation aux entretiens et le renforcement des compétences en français professionnel.
+                        </li>
+                        <li class="ml-6">Campus France fournit des ressources officielles et bases de données pour les
+                            jobs
+                            étudiants, stages et opportunités d’emploi.</li>
+                    </ul>
+                    <br>
+
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed"><br>
+                        <span class="font-semibold mb-2">Avantages de travailler</span>
+
+                        <li>
+                            <span class="font-semibold mb-2">Le travail en France offre bien plus qu’une aide financière
+                                : </span>
+                            <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed ">
+                                <li class="ml-10">Expérience culturelle enrichissante</li>
+                                <li class="ml-10">Amélioration de votre français</li>
+                                <li class="ml-10">Développement d’un réseau professionnel pour des opportunités futures
+                                    en France et à
+                                    l’international</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed"><br>
+                        <span class="font-semibold mb-2">Conseils finaux</span>
+
+                        <li class="ml-6">Travailler tout en étudiant demande une bonne gestion du temps.
+                        </li>
+                        <li class="ml-6">Priorisez vos études, même en acquérant de l’expérience professionnelle.</li>
+                        <li class="ml-6">Utilisez le soutien d’École French et de Campus France pour maximiser votre
+                            réussite et vos
+                            opportunités sur le marché du travail français.</li>
+                    </ul>
+                    <br>
+                    </p>
+
+                    <h1 class="text-lg font-bold mb-3">Securing Employment in France: A Resource for École French
+                        Learners</h1>
+                    <p class="text-sm leading-relaxed">
+                        Working in France is an outstanding experience for students learning with École French for
+                        international experience, sharpening your langue française﻿, and subsidizing your time there. To
+                        finding a position in France, you'll need to blend some preparation, understanding of legal
+                        requirements, and finding a community for follow-up and resources.
+                    </p>
+                    <br>
+                    <h1 class="text-lg font-bold mb-3">
+                        Understanding Work Authorization
+                    </h1>
+                    <p class="text-sm leading-relaxed">
+                        As an international student, you may work part-time for up to 964 hours in the academic year
+                        (approximately 20 hours a week), and full-time in the intersession between sequences when your
+                        school is not in session. Be sure that you are meeting the requirements of your visa and/or
+                        residence permits that allow you to work. Changes occur frequently in the government
+                        regulations, so check these regularly.
+
+                        <br>
+                    <ul class="list-disc list-inside space-y-2 text-sm sm:text-base leading-relaxed"><br>
+                        <span class="font-semibold mb-2">Job Search Strategies </span>
+                        <li class="ml-6">Start your search well in advance. Use online job boards, university career
+                            boards, employment companies, etc., to find job openings.</li>
+                        <li class="ml-6">The popular sectors for students' jobs are the restaurant / bar sector, retail
+                            sector, tutoring and studying as administrative support within the university. </li>
+                        <li class="ml-6">Networking is important. Connect with your École French students classmates,
+                            and alumni, and the local community about your search, for referrals and advice.</li>
+                        <li class="ml-6">Finally, find a formal CV and cover letter template in French. Look through the
+                            history, structural norms, and formatting to think through your personal document. Work an
+                            example CV and cover letter in École French courses on studying and professional
+                            communication to help you finalize it all.</li>
+                    </ul>
+                    </p>
+                    <br>
+                    <p class="text-sm leading-relaxed">
+                        <span class="font-semibold">Resources & Support: </span>
+                        École French offers individualized assistance with job search strategies and interview skills
+                        and builds English language skills in the French professional world. Additionally, Campus France
+                        provides official resources and databases for student jobs, internships, and employment
+                        opportunities.
+                    </p>
+                    <br>
+                    <p class="text-sm leading-relaxed">
+                        <span class="font-semibold">Benefits of Working: </span>
+                        Working in France provides more than just financial assistance in your studies. Working in
+                        France provides opportunities to gain cultural experience, improve your French, and take
+                        advantage of the new professional networks for future career and academic options inside and
+                        outside France.
+                    </p>
+                    <br>
+                    <p class="text-sm leading-relaxed">
+                        <span class="font-semibold">Final Tips: </span>
+                        Working while studying presents a challenge to time management. While gaining work experience,
+                        remember that school must come first. Use École French and Campus France support to maximize
+                        your working success and opportunity in the French labor market.
+                    </p>
+                </div>
+
+                <div id="4content3" class="hidden">
+                    <h1 class="text-lg font-bold mb-3">How to start a company in France</h1>
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Comment créer une entreprise en France : Guide par École
+                            French</span><br>
+                        Créer votre propre entreprise en France est une opportunité passionnante, nécessitant
+                        planification stratégique, compréhension du marché et conformité à la législation française. Que
+                        vous soyez entrepreneur, jeune diplômé ou professionnel prêt à concrétiser une idée, ce guide
+                        vous aidera à franchir vos premiers pas avec confiance.
+                    </p>
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Étape 1 : Justifier votre idée et établir un plan d’affaires</span>
+                        Clarifiez votre idée de business, étudiez le marché, la concurrence et vos prévisions
+                        financières. Un business plan clair sert de feuille de route et est essentiel pour obtenir des
+                        financements ou des investisseurs.
+
+                    </p>
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Étape 2 : Choisir la forme juridique adaptée</span>
+                        <span class="font-bold mb-4">La France propose plusieurs formes juridiques :</span>
+                        <li class="ml-6">Entreprise Individuelle (EI) – entreprise individuelle</li>
+                        <li class="ml-6">SARL – société à responsabilité limitée</li>
+                        <li class="ml-6">SAS – société par actions simplifiée</li>
+                        <li class="ml-6">Le choix dépend du niveau de risque, du régime fiscal souhaité et du mode de
+                            gestion de votre entreprise.</li>
+                    </p>
+                    <br>
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Étape 3 : Enregistrer votre entreprise</span><br>
+                        Enregistrez votre entreprise auprès des autorités locales compétentes : Centre de Formalités des
+                        Entreprises (CFE) ou Chambre de Commerce et d’Industrie (CCI). Choisissez le nom de votre
+                        société, soumettez les documents nécessaires et obtenez votre numéro SIRET (identifiant officiel
+                        de votre entreprise).
+                    </p>
+
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Étape 4 : Organiser vos finances et votre comptabilité</span><br>
+                        Ouvrez un compte bancaire professionnel en France. Mettez en place votre comptabilité
+                        conformément à la législation locale. Comprenez vos obligations financières, y compris TVA,
+                        cotisations sociales et autres taxes
+                    </p>
+
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Étape 5 : Obtenir les licences et autorisations
+                            nécessaires</span><br>
+                        Selon votre secteur d’activité, demandez les licences ou permis appropriés pour être en règle
+                        avec la législation et les réglementations sectorielles françaises.
+                    </p>
+
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Étape 6 : Démarrer et promouvoir votre entreprise</span><br>
+                        Construisez votre marque, créez un site web et faites la promotion de votre entreprise pour
+                        attirer des clients. Le réseautage avec d’autres entreprises locales et l’utilisation de
+                        ressources en ligne vous aideront à développer la présence de votre entreprise.
+
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">How to Form a Company in France: </span>
+                        A Guide by École French
+                        Creating your own business in France is an exhilarating opportunity intertwined with strategic
+                        planning, understanding business, and complying with French law. Whether you're an entrepreneur,
+                        a fresh graduate, or a professional ready to put your business idea into practice in France,
+                        this guide will help you take your first steps with confidence.
+
+
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Step 1: Justify Your Business Idea and Plan</span><br>
+                        You'll want to start by clarifying your business idea, as well as understanding your market,
+                        competition, and financial forecasts. It is wise to have a clear business plan which can act as
+                        both a road map for you and is crucial for seeking funding or investments for your venture.
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Step 2: Choose the Right Legal Form</span><br>
+                        France has diverse legal forms for businesses: Entreprise Individuelle (sole proprietorship),
+                        SARL (limited liability company), SAS (simplified joint-stock company), and many others. The
+                        best legal form depends upon the level of risk you're willing to accept with liability, how and
+                        at what rate you want to be taxed, and how you would like to manage your business.
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Stage 3: Register Your Business</span><br>
+                        You must register your business with the necessary local authorities including the Centre de
+                        Formalités des Entreprises (CFE) or the Chambre de Commerce et d'Industrie (CCI). This involves
+                        deciding on the name of your company, submitting documents, and getting your SIRET number (the
+                        number by which your business is identified).
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Stage 4: Set Up Your Finances and Accounting</span><br>
+                        You can open a French business bank account and will need to setup your accounting in compliance
+                        with local French legislation. It is essential to understand your financial obligations to
+                        include VAT, employee contributions, and other taxes.
+                    </p>
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Stage 5: Apply for Necessary Licenses and Permits</span><br>
+                        Depending on your sector or business activities, you will need to apply for the appropriate
+                        licenses or permits for your business. This in order to operate within French law and sector
+                        regulations.
+                    </p>
+                    <p class="text-sm leading-relaxed mb-3">
+                        <span class="font-bold mb-4">Stage 6: Start To Operate and Market Your Business</span><br>
+                        Build a brand, build a website, and market your business to start attracting clients. Networking
+                        within other local businesses and leveraging online resources will help you build out your
+                        company presence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to show content
+        function showContent(contentId) {
+            // Hide all content divs in the current content-box
+            const contentBox = event.target
+                .closest("section")
+                .querySelector("#content-box");
+            const allContents = contentBox.querySelectorAll(
+                '[id^="content"], [id^="2content"], [id^="3content"], [id^="4content"]'
+            );
+            allContents.forEach((content) => {
+                content.classList.add("hidden");
+            });
+
+            // Show the selected content
+            const selectedContent = document.getElementById(contentId);
+            if (selectedContent) {
+                selectedContent.classList.remove("hidden");
+            }
+        }
+
+        // Function to log button clicks
+        function logButtonClick(buttonText) {
+            console.log("Button clicked: " + buttonText);
+            console.log("Time: " + new Date().toLocaleTimeString());
+        }
+
+        // Function to handle button hover effect
+        document.querySelectorAll("button").forEach((button) => {
+            button.addEventListener("mouseenter", function () {
+                console.log("Hovering over: " + this.textContent.trim());
+            });
+        });
+
+        // Function to scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+    </script>
+</body>
+</html>
